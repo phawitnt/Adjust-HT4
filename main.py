@@ -26,7 +26,7 @@ def update(contents,id,adj_temp,adj_humid):
         file_content += f"{c},{contents[c]['adj_temp']},{contents[c]['adj_humid']}\n"
     file_content = file_content[:-1]
     
-    repo = g.get_repo("phawitb/adjustHT4")
+    repo = g.get_repo("phawitnt/Adjust-HT4")
     contents = repo.get_contents("adjust_error.txt", ref="main")
     a = repo.update_file(contents.path, "from PyGithub", file_content, contents.sha, branch="main")
     if 'content' in a.keys():
